@@ -15,7 +15,7 @@
       </h1>
       <ol class="breadcrumb">
         <!-- li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li-->
-        <li class="active">Hello {{Auth::user()->username}}</li>
+        <li class="active">Hello {{Auth::user()->name}}</li>
       </ol>
     </section>
 
@@ -37,7 +37,15 @@
                                 {!! Form::text('nama_produk', null, ['class' => 'form-control', 'placeholder' => 'Nama Produk']) !!}
                             </div>
                         </div>
- 
+                        
+            
+                        <div class="form-group">
+                            {!! Form::label('type_produk', 'Type Produk', ['class' => 'control-label col-md-3']) !!}
+                            <div class="col-sm-2">
+                                {!! Form::text('type_produk', null,  ['class' => 'form-control']) !!}                                
+                            </div>
+                        </div>
+            
                         <div class="form-group">
                             {!! Form::label('jumlah_produk', 'Jumlah Produk', ['class' => 'control-label col-md-3']) !!}
                             <div class="col-sm-2">
@@ -47,8 +55,13 @@
                         
                         <div class="form-group">
                             {!! Form::label('nama_supplier','Nama Supplier' , ['class' => 'control-label col-md-3']) !!}
+                            
                             <div class="col-md-9">
-                                {!! Form::select('nama_supplier', array('samsung' => 'Samsung', 'sony' => 'Sony', 'toshiba' => 'Toshiba', 'sanken' => 'Sanken'), null, ['class' => 'form-control','placeholder' => 'Pilih Supplier']) !!}
+                                <select class="form-control" name="nama_supplier" id="nama_supplier" placeholder="Pilih Suppplier" data-parsley-required="true">
+                                @foreach($supplier as $supp)
+                                    <option value="{{ $supp->nama_supplier}}">{{ $supp->nama_supplier}}</option>
+                                @endforeach
+                                </select>
                             </div>
                         </div>
                         
@@ -128,7 +141,7 @@
             
         </div>
      <!--   <div class="col-sm-2">
-          <a class="btn btn-primary" href="{{ route('employee-management.create') }}">Print</a>
+          <a class="btn btn-primary" href="">Print</a>
         </div> -->
     </div>
   </div>

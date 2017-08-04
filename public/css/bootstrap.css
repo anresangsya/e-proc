@@ -1089,7 +1089,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #333;
+  color: #fff;
   background-color: #fff;
 }
 input,
@@ -2272,7 +2272,7 @@ th {
   border-top: 1px solid #ddd;
 }
 .table > thead > tr > th {
-  vertical-align: bottom;
+  vertical-align: center;
   border-bottom: 2px solid #ddd;
 }
 .table > caption + thead > tr:first-child > th,
@@ -4400,7 +4400,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-color: #e7e7e7;
 }
 .navbar-default .navbar-brand {
-  color: #777;
+  color: #fff;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
@@ -6516,6 +6516,7 @@ button.close {
 }
 @media (max-width: 767px) {
   .hidden-xs {
+	align: center;
     display: none !important;
   }
 }

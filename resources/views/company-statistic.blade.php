@@ -76,20 +76,22 @@ desired effect
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <div class="box" align="center">
-      <h4>
-        Hello, {{Auth::user()->name}}
-      </h4>
-            </div>
+      <h1>
+        Dashboard
+      </h1>
       <ol class="breadcrumb">
         <!-- li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li-->
-<!--        <li class="active">Hello {{Auth::user()->username}}</li>-->
+        <li class="active">Hello {{Auth::user()->username}}</li>
       </ol>
-        
-    <h1>Selamat Datang di Portal BRI-Satelit</h1>
-        <hr>
-        @extends ('layouts.plane')
+    </section>
 
+    <!-- Main content -->
+    <section class="content">
+        @extends ('layouts.dashboard')
+@section('page_heading','Charts')
+@section('section')
+
+        <div class="col-sm-12">	
 	<div class="row">
 		<div class="col-sm-6">
 			@section ('cchart1_panel_title', 'Company Statistic')
@@ -111,15 +113,14 @@ desired effect
 
 		</div> 
 	</div>
-    </section>
-
-    <!-- Main content -->
-    <section class="content">
 	
-
+	
+</div>
 
       <div><div><div>
           
+          <div class="linechart">
+        </div>
     </div>
   </div>
         </div>

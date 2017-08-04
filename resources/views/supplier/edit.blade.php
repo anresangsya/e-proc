@@ -1,4 +1,4 @@
-@extends('product.base')
+@extends('supplier.base')
 
 @section('content')
 
@@ -11,7 +11,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Ubah Produk
+        Ubah Supplier
       </h1>
       <ol class="breadcrumb">
         <!-- li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li-->
@@ -29,7 +29,7 @@
         <div class="col-sm-8">
        
             
-            <form class="form-horizontal" role="form" method="POST" action="{{ route('product.update', ['id' => $product->id]) }}">
+            <form class="form-horizontal" role="form" method="POST" action="{{ route('supplier.update', ['id' => $supplier->id]) }}">
                 
           <!--  {!! Form::open(array('class' => 'form-horizontal', 'role' => 'form', 'method' => 'POST')) !!}
                         <div class="form-group">
@@ -125,53 +125,66 @@
                         <div class="form-group">
                             
                             
-                            <label for="nama_produk" class="col-md-2 control-label">Nama Produk</label>
+                            <label for="nama_supplier" class="col-md-2 control-label">Nama Supplier</label>
 
                             <div class="col-md-6">
-                                <input id="nama_produk" type="text" class="form-control" name="nama_produk" value="{{ $product->nama_produk }}">
+                                <input id="nama_supplier" type="text" class="form-control" name="nama_supplier" value="{{ $supplier->nama_supplier }}">
 
                                 @if ($errors->has('nama_produk'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('nama_produk') }}</strong>
+                                        <strong>{{ $errors->first('nama_supplier') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="jumlah_produk" class="col-md-2 control-label">Jumlah Produk</label>
+                            <label for="alamat_supplier" class="col-md-2 control-label">Alamat Supplier</label>
 
                             <div class="col-md-6">
-                                <input id="jumlah_produk" type="text" class="form-control" name="jumlah_produk" value="{{ $product->jumlah_produk }}" required>
+                                <input id="alamat_supplier" type="text" class="form-control" name="alamat_supplier" value="{{ $supplier->alamat_supplier }}" required>
 
                             </div>
                         </div>
+                
+<!--
                         <div class="form-group">
-                            <label for="nama_supplier" class="col-md-2 control-label">Nama Supplier</label>
+                       <label for="jenis_barang" class="col-md-2 control-label">No Telepon</label>
+                            <select id="no_telepon" type="text" class="form-control" name="no_telepon" value="{{ $supplier->jenis_barang}}" required>
+                            <option>Router</option>
+                            <option>Modem</option>
+                            <option>Flashdisk</option>
+                            <option>RAM</option>
+                        </select>
+                    </div>
+-->
+                        
+                        <div class="form-group">
+                            <label for="no_telepon" class="col-md-2 control-label">No Telepon</label>
 
                             <div class="col-md-6">
-                                <input id="nama_supplier" type="text" class="form-control" name="nama_supplier" value="{{ $product->nama_supplier }}" required>
+                                <input id="no_telepon" type="text" class="form-control" name="no_telepon" value="{{ $supplier->no_telepon }}" required>
 
                             </div>
-                            
                         </div>
-                <div class="form-group">
-                    
+                
+              
+                
+
                 <div class="col-md-6">
                                
                 <button class="btn btn-primary" type="submit">Ubah</button>
 
                             </div>
-                            
-                        </div>
             </form> 
             
+          <h1 class="box-title"></h1>
         </div>
         
                   
             
             
         </div>
-    
+     
     </div>
   </div>
         
@@ -197,6 +210,4 @@
      fixed layout. -->
 
 @endsection
-    
-    
     

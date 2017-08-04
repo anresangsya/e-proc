@@ -12,7 +12,7 @@
         <div class="pull-left info">
           <p>{{ Auth::user()->name}}</p>
           <!-- Status -->
-    <!--      <a href="#"><i class="fa fa-circle text-success"></i> Online</a> -->
+        <a href="#"><i class="fa fa-circle text-success"></i>Online</a>
         </div>
       </div>
 
@@ -32,8 +32,9 @@
       <ul class="sidebar-menu">
         <!-- Optionally, you can add icons to the links -->
         
-          <li class="treeview"><a href="/"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
-        <li class="treeview"><a href="{{ url('/product') }}"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
+          <li class="treeview">
+              <a href="/"><i class="fa fa-link"></i> <span>Beranda</span></a></li>
+        <li class="treeview"><a href="{{ url('/product') }}"><i class="fa fa-link"></i> <span>Pengadaan Barang</span></a></li>
         
      <!--     <li class="treeview">
           <a href="{{ url('/product') }}
@@ -52,39 +53,8 @@
               
               
       
-          <!--<li><a href="{{ url('employee-management') }}"><i class="fa fa-link"></i> <span>Employee Management</span></a></li>
-        <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>System Management</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="{{ url('system-management/department') }}">Department</a></li>
-            <li><a href="{{ url('system-management/division') }}">Division</a></li>
-            <li><a href="{{ url('system-management/country') }}">Country</a></li>
-            <li><a href="{{ url('system-management/state') }}">State</a></li>
-            <li><a href="{{ url('system-management/city') }}">City</a></li>
-            <li><a href="{{ url('system-management/report') }}">Report</a></li>
-          </ul> 
-        </li> 
-        <li><a href="{{ route('user-management.index') }}"><i class="fa fa-link"></i> <span>User management</span></a></li>
-                           
-          <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Suppliers</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a> -->
-              <!--
-          <ul class="treeview-menu">
-            <li><a href="{{ url('/') }}">Supplier List</a></li>
-            <li><a href="{{ url('/') }}">Supplier Overview</a></li>
-              </ul> -->
-</li>
-                           
-        <li class="treeview"><a href="/"><i class="fa fa-link"></i> <span>Supplier</span></a></li>
-        <li class="treeview"><a href="/"><i class="fa fa-link"></i> <span>Company Statistic</span></a></li>
+        <li class="treeview"><a href="/supplier"><i class="fa fa-link"></i> <span>Penyedia Barang</span></a></li>
+        <li class="treeview"><a href="/"><i class="fa fa-link"></i> <span>SPK</span></a></li>
                 
 </ul>
       <!-- /.sidebar-menu -->

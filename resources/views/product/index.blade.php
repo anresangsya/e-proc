@@ -9,11 +9,18 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Products
+        Daftar Barang
+<!--
+          
+            @foreach( $supplier as $supp)
+          
+          {{ $supp->nama_supplier}}
+          @endforeach
+-->
       </h1>
         <hr>
-          <a class="btn btn-primary" href="{{ url('product/create') }}">Tambah Produk</a>
-             <a class="btn btn-primary">Print</a>
+          <a class="btn btn-primary" href="{{ route('product.create') }}">Tambah Produk</a>
+             <a class="btn btn-primary" href="{{ url('pdf/product') }}">Print</a>
        
       <ol class="breadcrumb">
         <!-- li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li-->
@@ -28,12 +35,13 @@
 <div class="box">    
   <div class="box-header">
     <div class="row">
+<!--
         <div class="col-sm-8">
-          <h1 class="box-title">Products List</h1>
+          <h1 class="box-title">Daftar Barang</h1>
         </div>
+-->
         
         <div class="col-md-12">
-            <hr>
           <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
       <div class="row">
         <div class="col-md-12">
@@ -41,13 +49,14 @@
             <thead>
               <tr role="row">
                   
-              <th width="10%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" aria-sort="ascending">ID</th>
-              <th width="25%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" aria-sort="ascending">Nama Produk</th>
-                <th width="10%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Address: activate to sort column ascending">Jumlah Produk</th>
-                <th width="15%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Nama Supplier</th>
-                  <th width="4%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Status Permintaan</th>
-                  <th width="10%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Tanggal Permintaan</th>
-                    <th width="55%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending"></th>
+              <th width="5%" class="hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">ID</th>
+              <th width="10%" class="hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Nama Produk</th>
+              <th width="10%" class="hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Type Produk</th>
+                <th width="5%" class="hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Jumlah Produk</th>
+                <th width="20%" class="hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Nama Supplier</th>
+                  <th width="4%" class="hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Status Permintaan</th>
+                  <th width="5%" class="hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Tanggal Permintaan</th>
+                    <th width="55%" class="hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"></th>
               </tr>
             </thead>
             <tbody>
@@ -55,6 +64,7 @@
                 <tr role="row" class="odd">
                   <td class="hidden-xs">{{ $products->id }}</td>
                   <td class="hidden-xs">{{ $products->nama_produk }}</td>
+                  <td class="hidden-xs">{{ $products->type_produk }}</td>
                   <td class="hidden-xs">{{ $products->jumlah_produk}}</td>
                   <td class="hidden-xs">{{ $products->nama_supplier}}</td>
                   <td class="hidden-xs">{{ $products->status_permintaan}}</td>
@@ -66,7 +76,7 @@
                         
                         <a href="{{ route('product.edit', ['id' => $products->id]) }}" class="btn btn-warning col-sm-5 col-xs-5 btn-margin">Update
                         </a>
-                         <button type="submit" class="btn btn-danger col-sm-4 col-xs-5 btn-margin">Delete
+                         <button type="submit" class="btn btn-danger col-sm-5 col-xs-5 btn-margin">Delete
                         </button>
                     </form></div>
                   </td>
@@ -84,7 +94,7 @@
     
       <div class="row">
         <div class="col-sm-5">
-          <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Menampilkan 1 sampai {{count($products)}} dari {{count($products)}} masukan </div>
+          <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Menampilkan {{count($product)}} masukan </div>
         </div>
         <div class="col-sm-7">
           <div class="pagination" id="example2_paginate">

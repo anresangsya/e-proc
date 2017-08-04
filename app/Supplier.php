@@ -9,5 +9,10 @@ class Supplier extends Model
     
     protected $guarded = [];
     
-    protected $table = 'product';
+    protected $table = 'suppliers';
+    
+    public function product()
+    {
+        return $this->hasMany('App\Product');
+    }
 }

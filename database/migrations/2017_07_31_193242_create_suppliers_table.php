@@ -17,7 +17,7 @@ class CreateSuppliersTable extends Migration
             $table->increments('id');
             $table->string('nama_supplier');
             $table->string('alamat_supplier');
-            $table->boolean('status');
+            $table->string('no_telepon');
             $table->timestamps();
         });
     }

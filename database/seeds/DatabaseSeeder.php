@@ -12,6 +12,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+                $this->call(ProductSeeder::class);
+
        /*  $user = factory(App\User::class)->create([
              'username' => 'admin',
              'email' => 'admin@gmail.com',
@@ -20,13 +22,13 @@ class DatabaseSeeder extends Seeder
              'firstname' => 'admin'
          ]); */
         
-        $product = factory(App\Product::class)->create([
-             'nama_produk' => 'Modem',
-             'jumlah_produk' => 10,
-                'nama_supplier' => 'Samsung',
-            'status_permintaan' => 'Menunggu',
-             'tanggal_request' => Carbon::now()
-         ]);
+//        $product = factory(App\Product::class)->create([
+//             'nama_produk' => 'Modem',
+//             'jumlah_produk' => 10,
+//                'nama_supplier' => 'Samsung',
+//            'status_permintaan' => 'Menunggu',
+//             'tanggal_request' => Carbon::now()
+//         ]);
         
         
     }

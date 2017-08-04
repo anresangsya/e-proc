@@ -1,4 +1,4 @@
-@extends('product.base')
+@extends('supplier.base')
 
 @section('content')
 
@@ -11,7 +11,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Ubah Produk
+        Tambah Supplier
       </h1>
       <ol class="breadcrumb">
         <!-- li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li-->
@@ -29,30 +29,40 @@
         <div class="col-sm-8">
        
             
-            <form class="form-horizontal" role="form" method="POST" action="{{ route('product.update', ['id' => $product->id]) }}">
-                
-          <!--  {!! Form::open(array('class' => 'form-horizontal', 'role' => 'form', 'method' => 'POST')) !!}
+            
+            {!! Form::open(array('class' => 'form-horizontal', 'role' => 'form', 'method' => 'POST', 'action' => 'SupplierController@store' )) !!}
                         <div class="form-group">
-                            {!! Form::label('nama_produk', 'Nama Produk', ['class' => 'control-label col-md-3']) !!}
-                            <div class="col-md-9">
-                                {!! Form::text('nama_produk', null, ['class' => 'form-control', 'placeholder' => 'Nama Produk']) !!}
+                            {!! Form::label('nama_supplier', 'Nama Supplier', ['class' => 'control-label col-md-3']) !!}
+                            <div class="col-md-5">
+                                {!! Form::text('nama_supplier', null, ['class' => 'form-control', 'placeholder' => 'Supplier']) !!}
                             </div>
                         </div>
  
                         <div class="form-group">
-                            {!! Form::label('jumlah_produk', 'Jumlah Produk', ['class' => 'control-label col-md-3']) !!}
-                            <div class="col-sm-2">
-                                {!! Form::text('jumlah_produk', null,  ['class' => 'form-control']) !!}                                
+                            {!! Form::label('alamat_supplier', 'Alamat Supplier', ['class' => 'control-label col-md-3']) !!}
+                            <div class="col-sm-8">
+                                {!! Form::text('alamat_supplier', null,  ['class' => 'form-control']) !!}                                
                             </div>
                         </div>
                         
+              <div class="form-group">
+                            {!! Form::label('no_telepon', 'No Telepon', ['class' => 'control-label col-md-3']) !!}
+                            <div class="col-sm-5">
+                                {!! Form::text('no_telepon', null,  ['class' => 'form-control']) !!}                                
+                            </div>
+                        </div>
+                        
+            
+<!--
                         <div class="form-group">
-                            {!! Form::label('nama_supplier','Nama Supplier' , ['class' => 'control-label col-md-3']) !!}
-                            <div class="col-md-9">
-                                {!! Form::select('nama_supplier', array('samsung' => 'Samsung', 'sony' => 'Sony', 'toshiba' => 'Toshiba', 'sanken' => 'Sanken'), null, ['class' => 'form-control','placeholder' => 'Pilih Supplier']) !!}
+                            {!! Form::label('jenis_barang','Jenis Barang' , ['class' => 'control-label col-md-3']) !!}
+                            <div class="col-md-4">
+                                {!! Form::select('jenis_barang', array('router' => 'Router', 'modem' => 'Modem', 'flashdisk' => 'Flashdisk', 'RAM' => 'RAM'), null, ['class' => 'form-control','placeholder' => 'Pilih Jenis Barang']) !!}
                             </div>
                         </div>
+-->
                         
+                   
  <!--
                         <div class="form-group">
                             {!! Form::label('password', 'Password', ['class' => 'control-label col-md-3']) !!}
@@ -110,7 +120,7 @@
                             <div class="col-md-9">
                                 {!! Form::file('image', ['class' => 'form-control']) !!}
                             </div>
-                        </div> 
+                        </div> -->
  
                         <div class="form-group">
                             <div class="col-md-9 col-md-offset-3">
@@ -118,60 +128,16 @@
                             </div>
                         </div> 
             
-                    {!! Form::close() !!} -->
-                
-                <input type="hidden" name="_method" value="PATCH">
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <div class="form-group">
-                            
-                            
-                            <label for="nama_produk" class="col-md-2 control-label">Nama Produk</label>
-
-                            <div class="col-md-6">
-                                <input id="nama_produk" type="text" class="form-control" name="nama_produk" value="{{ $product->nama_produk }}">
-
-                                @if ($errors->has('nama_produk'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('nama_produk') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="jumlah_produk" class="col-md-2 control-label">Jumlah Produk</label>
-
-                            <div class="col-md-6">
-                                <input id="jumlah_produk" type="text" class="form-control" name="jumlah_produk" value="{{ $product->jumlah_produk }}" required>
-
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="nama_supplier" class="col-md-2 control-label">Nama Supplier</label>
-
-                            <div class="col-md-6">
-                                <input id="nama_supplier" type="text" class="form-control" name="nama_supplier" value="{{ $product->nama_supplier }}" required>
-
-                            </div>
-                            
-                        </div>
-                <div class="form-group">
-                    
-                <div class="col-md-6">
-                               
-                <button class="btn btn-primary" type="submit">Ubah</button>
-
-                            </div>
-                            
-                        </div>
-            </form> 
+                    {!! Form::close() !!}
             
+            
+          <h1 class="box-title"></h1>
         </div>
         
                   
             
             
         </div>
-    
     </div>
   </div>
         
@@ -197,6 +163,4 @@
      fixed layout. -->
 
 @endsection
-    
-    
     

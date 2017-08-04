@@ -10,5 +10,10 @@ class Product extends Model
     
     protected $guarded = [];
     
-    protected $table = 'product';
+    protected $table = 'pesanan';
+     
+    public function supplier()
+    {
+        return $this->belongsTo('App\Supplier');
+    }
 }

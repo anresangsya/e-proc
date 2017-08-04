@@ -13,9 +13,10 @@ class CreateProductTable extends Migration
      */
     public function up()
     {
-        Schema::create('product', function (Blueprint $table) {
+        Schema::create('Pesanan', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_produk');
+            $table->string('type_produk');
             $table->integer('jumlah_produk');
             $table->string('nama_supplier');
             $table->string('status_permintaan');

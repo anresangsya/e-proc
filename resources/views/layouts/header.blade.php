@@ -27,8 +27,9 @@
                     <a href="{{ url('profile') }}" class="navbar-brand">Profil</a>
                   </div> -->
                  <div class="pull-right">
+                     
                     <a class="navbar-brand" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                    Keluar
+                    LOGOUT
                     </a>
                  </div> 
                 @endif
