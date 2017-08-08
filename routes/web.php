@@ -72,6 +72,11 @@ Route::get('/pdf/supplier',[
     'uses'  => 'SupplierController@getPdf',
     'as'    => 'Daftar Supplier.pdf',
 ]);
+
+Route::get('/pdf/pengadaan',[
+    'uses'  => 'PengadaanController@getPdf',
+    'as'    => 'Daftar Pengadaan Barang.pdf',
+]);
 //
 
 

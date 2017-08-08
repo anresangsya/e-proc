@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Supplier;
 use App\Pengadaan;
-
+use PDF;
 
 class PengadaanController extends Controller
 {
@@ -134,5 +134,14 @@ class PengadaanController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getPdf()
+    {
+        $pengadaan = Pengadaan::all();
+        $pdf = PDF::loadView('pdf/pengadaan',compact('pengadaan'))
+                    ->setPaper('a4');
+     
+        return $pdf->stream();
     }
 }

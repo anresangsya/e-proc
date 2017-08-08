@@ -109,7 +109,7 @@
               </div>
               
               <div role="tabpanel" class="tab-pane" id="showList">
-                
+                <a class="btn btn-success" href="{{ url('pdf/pengadaan') }}"><span class="glyphicon glyphicon-print"></span> Cetak</a>
                 <table id="table_pengadaan" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="table_pengadaan">
                   <thead>
                     <tr role="row">
