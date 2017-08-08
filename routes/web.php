@@ -21,6 +21,11 @@ Route::get('/dashboard', 'DashboardController@index');
 //Route::get('/system-management/{option}', 'SystemMgmtController@index');
 Route::get('/profile', 'ProfileController@index');
 
+Route::get('/pengadaan', 'PengadaanController@index');
+
+Route::get('/pengadaan/tes', 'PengadaanController@tes');
+
+
 //Route::get('/product/edit','SupplierController@index');
 ////
 //Route::post('user-management/search', 'UserManagementController@search')->name('user-management.search');
@@ -31,6 +36,7 @@ Route::get('/profile', 'ProfileController@index');
 
 Route::resource('product','ProductController');
 Route::resource('supplier','SupplierController');
+Route::resource('pengadaan','PengadaanController');
 
 
 

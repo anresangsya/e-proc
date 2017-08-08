@@ -32,9 +32,9 @@
       <ul class="sidebar-menu">
         <!-- Optionally, you can add icons to the links -->
         
-          <li class="treeview">
-              <a href="/"><i class="fa fa-link"></i> <span>Beranda</span></a></li>
-        <li class="treeview"><a href="{{ url('/product') }}"><i class="fa fa-link"></i> <span>Pengadaan Barang</span></a></li>
+        <li class="treeview"><a href="/"><i class="fa fa-link"></i> <span>Beranda</span></a></li>
+        <li class="treeview"><a href="{{ url('/pengadaan') }}"><i class="fa fa-link"></i> <span>Pengadaan</span></a></li>
+        <li class="treeview"><a href="{{ url('/product') }}"><i class="fa fa-link"></i> <span>Produk</span></a></li>
         
      <!--     <li class="treeview">
           <a href="{{ url('/product') }}

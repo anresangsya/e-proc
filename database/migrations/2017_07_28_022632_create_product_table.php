@@ -11,27 +11,27 @@ class CreateProductTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('Pesanan', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nama_produk');
-            $table->string('type_produk');
-            $table->integer('jumlah_produk');
-            $table->string('nama_supplier');
-            $table->string('status_permintaan');
-            $table->date('tanggal_request');
-            $table->timestamps();
-        });
-    }
+    // public function up()
+    // {
+    //     Schema::create('Pesanan', function (Blueprint $table) {
+    //         $table->increments('id');
+    //         $table->string('nama_produk');
+    //         $table->string('type_produk');
+    //         $table->integer('jumlah_produk');
+    //         $table->string('nama_supplier');
+    //         $table->string('status_permintaan');
+    //         $table->date('tanggal_request');
+    //         $table->timestamps();
+    //     });
+    // }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('product');
-    }
+    // /**
+    //  * Reverse the migrations.
+    //  *
+    //  * @return void
+    //  */
+    // public function down()
+    // {
+    //     Schema::dropIfExists('product');
+    // }
 }
